@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 import os
+import time
 
 client = commands.Bot(command_prefix="interesting this bot has no commands", help_command=None, intents = discord.Intents.all())
 
@@ -15,7 +16,7 @@ async def on_member_update(before, after):
         return
     if before.status == discord.Status.online and after.status == discord.Status.offline:
         channel = client.get_channel(874589313810186260)
-        print(f"{before.name} has gone offline :O")
+        print(f"{time.ctime(time.time)}: {before.name} has gone offline :O")
         await channel.send(f"{before.name} has gone offline :O")
 
 client.run(os.getenv('maxigamestracker'))
