@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import os
 
-client = commands.Bot(command_prefix=None, help_command=None, intents = discord.Intents.all())
+client = commands.Bot(command_prefix="interesting this bot has no commands", help_command=None, intents = discord.Intents.all())
 
 
 @client.event
