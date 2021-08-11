@@ -16,7 +16,6 @@ async def on_member_update(before, after):
         return
     if before.status == discord.Status.online and after.status == discord.Status.offline:
         channel = client.get_channel(874589313810186260)
-        print(f"{time.ctime(time.time)}: {before.name} has gone offline :O")
-        await channel.send(f"{before.name} has gone offline :O")
-
+        print(f"{time.ctime(time.time())}: {before.name} has gone offline :O")
+        await channel.send(f"{time.ctime(time.time())}: {before.name} has gone offline :O")
 client.run(os.getenv('maxigamestracker'))
