@@ -9,6 +9,15 @@ client = commands.Bot(command_prefix="interesting this bot has no commands", hel
 async def on_ready():
     print("Logged in as maxigames tracker :D")
 
+@client.command()
+async def testmaxigamesgoesoffline(ctx):
+    before = ctx.author
+    before.status = discord.Status.online
+
+    after = ctx.author
+    after.status = discord.Status.offline
+    await on_member_update(before, after)
+
 @client.event
 async def on_member_update(before, after):
     if before.id != 863419048041381920:
