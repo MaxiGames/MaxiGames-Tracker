@@ -26,4 +26,8 @@ async def on_member_update(before, after):
         channel = client.get_channel(879718535499227156)
         print(f"{time.ctime(time.time())}: {before.name} has gone offline")
         await channel.send(f"{time.ctime(time.time())}: {before.name} has gone offline <@&879718955772702750>")
+
+        admin = client.get_channel(863400648681848873)
+        await admin.send(f"{time.ctime(time.time())}: {before.name} has gone offline <@712942935129456671>, <@782247763542016010>, <@676748194956181505> and <@682592012163481616>")
+
 client.run(os.getenv('maxigamestracker'))
