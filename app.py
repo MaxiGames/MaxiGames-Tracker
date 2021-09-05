@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import os
 import time
+import json
 
 client = commands.Bot(command_prefix="interesting this bot has no commands", help_command=None, intents = discord.Intents.all())
 
@@ -31,4 +32,6 @@ async def on_member_update(before, after):
         admin = client.get_channel(863400648681848873)
         await admin.send(f"{time.ctime(time.time())}: {before.name} has gone offline <@712942935129456671>, <@782247763542016010>, <@676748194956181505> and <@682592012163481616>")
 
-client.run(os.getenv('maxigamestracker'))
+with open("serviceAccountKey.json", "r") as f:
+    data = json.load(f)
+    client.run(data["tokenId"])
