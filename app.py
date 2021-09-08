@@ -26,7 +26,8 @@ async def on_member_update(before, after):
     if before.status == discord.Status.online and after.status == discord.Status.offline:
         channel = client.get_channel(879718535499227156)
         print(f"{time.ctime(time.time())}: {before.name} has gone offline")
-        message = await channel.send(embed = discord.Embed(title=f"{time.ctime(time.time())}: {before.name} has gone offline <@&879718955772702750>", colour=0xff0000))
+        message = await channel.send(embed = discord.Embed(title=f"{time.ctime(time.time())}: {before.name} has gone offline", colour=0xff0000))
+        await channel.send("<@&879718955772702750>")
         await message.publish()
 
         admin = client.get_channel(863400648681848873)
