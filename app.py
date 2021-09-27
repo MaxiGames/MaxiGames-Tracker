@@ -44,4 +44,4 @@ async def on_member_update(before, after):
 
 with open("serviceAccountKey.json", "r") as f:
     data = json.load(f)
-    client.run(data["tokenId"])
+    client.run(data["tokenId"]) 
