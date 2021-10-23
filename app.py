@@ -37,6 +37,6 @@ async def on_member_update(before, after):
         await channel.send("<@&879718955772702750>")
         await message.publish()
 
-with open("serviceAccountKey.json", "r") as f:
+with open("client.json", "r") as f:
     data = json.load(f)
     client.run(data["tokenId"]) 
