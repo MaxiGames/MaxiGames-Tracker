@@ -27,20 +27,15 @@ async def on_member_update(before, after):
         channel = client.get_channel(879718535499227156)
         print(f"{time.ctime(time.time())}: {before.name} has gone offline")
         message = await channel.send(embed = discord.Embed(title=f"{time.ctime(time.time())}: {before.name} has gone offline", colour=0xff0000))
-        await channel.send("<@&879718955772702750>")
         await message.publish()
-
-        admin = client.get_channel(863400648681848873)
-        await admin.send(f"{time.ctime(time.time())}: {before.name} has gone offline <@712942935129456671>, <@782247763542016010>, <@676748194956181505> and <@682592012163481616>")
+        return
     
     if before.status == discord.Status.offline and after.status == discord.Status.online:
         channel = client.get_channel(879718535499227156)
         print(f"{time.ctime(time.time())}: {before.name} has come online")
         message = await channel.send(embed = discord.Embed(title=f"{time.ctime(time.time())}: {before.name} has come back online", colour=0x00ff00))
+        await channel.send("<@&879718955772702750>")
         await message.publish()
-
-        admin = client.get_channel(863400648681848873)
-        await admin.send(f"{time.ctime(time.time())}: {before.name} has come back online")
 
 with open("serviceAccountKey.json", "r") as f:
     data = json.load(f)
