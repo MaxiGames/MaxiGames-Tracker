@@ -8,7 +8,7 @@ client = commands.Bot(command_prefix="interesting this bot has no commands", hel
 
 @client.event
 async def on_ready():
-    print("Logged in as maxigames tracker :D")
+    print("Logged in as maxigames tracker XD")
 
 @client.command()
 async def testmaxigamesgoesoffline(ctx):
